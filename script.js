@@ -230,10 +230,11 @@ function fillMarquee(id, items, sep = "✦") {
 }
 
 function renderReviews() {
-  const card = (r) => `<div class="review">
-    <div class="review__stars">★★★★★</div>
-    <p>"${r.text}"</p><b>— ${r.name}</b></div>`;
-  document.getElementById("reviewsTrack").innerHTML = (REVIEWS.concat(REVIEWS)).map(card).join("");
+  // Empty placeholder blocks for now.
+  const EMPTY_COUNT = 6;
+  const card = () => `<div class="review review--empty"></div>`;
+  document.getElementById("reviewsTrack").innerHTML =
+    Array.from({ length: EMPTY_COUNT * 2 }, card).join("");
 }
 
 /* ---------- Events ---------- */
@@ -256,9 +257,15 @@ document.getElementById("checkoutBtn").addEventListener("click", () => {
   showToast("Thanks! This is a demo — no real order placed 💛");
 });
 
-const navLinks = document.getElementById("navLinks");
-document.getElementById("burger").addEventListener("click", () => navLinks.classList.toggle("is-open"));
-navLinks.addEventListener("click", (e) => { if (e.target.tagName === "A") navLinks.classList.remove("is-open"); });
+/* ---------- Nav overlay (Menu button) ---------- */
+const navmenu = document.getElementById("navmenu");
+const menuBtn = document.getElementById("menuBtn");
+function openMenu() { navmenu.classList.add("is-open"); navmenu.setAttribute("aria-hidden", "false"); menuBtn.setAttribute("aria-expanded", "true"); }
+function closeMenu() { navmenu.classList.remove("is-open"); navmenu.setAttribute("aria-hidden", "true"); menuBtn.setAttribute("aria-expanded", "false"); }
+menuBtn.addEventListener("click", openMenu);
+document.getElementById("navmenuClose").addEventListener("click", closeMenu);
+document.getElementById("navmenuOverlay").addEventListener("click", closeMenu);
+navmenu.addEventListener("click", (e) => { if (e.target.tagName === "A") closeMenu(); });
 
 document.getElementById("newsForm").addEventListener("submit", (e) => {
   e.preventDefault();
@@ -269,11 +276,16 @@ document.getElementById("newsForm").addEventListener("submit", (e) => {
   }
 });
 
-document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeDrawer(); });
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeDrawer(); closeMenu(); } });
+
+/* ---------- Header: drop the blue cloud once you scroll ---------- */
+const sitehead = document.getElementById("sitehead");
+function onScroll() { sitehead.classList.toggle("is-scrolled", window.scrollY > 8); }
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();
 
 /* ---------- Init ---------- */
 document.getElementById("year").textContent = new Date().getFullYear();
-fillMarquee("announceTrack", OFFER_STRINGS, "•");
 fillMarquee("stripTrack", STRIP_WORDS, "✦");
 renderSpecials();
 renderTabs();

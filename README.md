@@ -4,7 +4,8 @@ A funky, single-page bakery website for **Two Spoons** — savoury bites, sweet 
 
 ## Highlights
 
-- **Hero + scrolling marquees** — announcement bar of live offers and a rolling word strip.
+- **Cloud nav bar** — a Cob-style blue header with cream scalloped clouds that shows only at the top; on scroll the blue cloud drops away and the logo + Menu + Cart persist as a clean fixed bar. "Menu" opens a full nav overlay.
+- **Hero + rolling word strip** marquee.
 - **Chef's Specials** — Tres Leches, White Sauce Pasta and the Gochujang Korean Cheese Bun.
 - **Offers** — the three deals, applied automatically in the cart:
   - 5% off on orders ₹500 and above

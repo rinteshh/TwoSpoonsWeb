@@ -12,34 +12,34 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥄</text></svg>" />
 </head>
 <body>
-  <!-- Announcement marquee -->
-  <div class="announce">
-    <div class="announce__track" id="announceTrack" aria-hidden="true"></div>
-  </div>
-
-  <!-- Header -->
-  <header class="nav" id="nav">
-    <div class="nav__inner">
-      <button class="nav__burger" id="burger" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-      <a href="#top" class="brand" aria-label="Two Spoons home">
-        <span class="brand__spoons">🥄🥄</span>
+  <!-- Fixed cloud header -->
+  <header class="sitehead" id="sitehead">
+    <div class="sitehead__inner">
+      <a href="#top" class="brand" aria-label="Two Spoons Bakery home">
+        <img class="brand__logo" src="images/logo.png" alt="Two Spoons Bakery logo" />
         <span class="brand__name">Two&nbsp;Spoons</span>
       </a>
-      <nav class="nav__links" id="navLinks">
-        <a href="#menu">Menu</a>
-        <a href="#offers">Offers</a>
-        <a href="#story">Our Story</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <button class="cart-btn" id="cartBtn" aria-label="Open cart">
-        <span class="cart-btn__icon">🛒</span>
-        <span class="cart-btn__count" id="cartCount">0</span>
-      </button>
+      <div class="sitehead__actions">
+        <button class="navbtn navbtn--menu" id="menuBtn" aria-haspopup="true" aria-expanded="false">Menu</button>
+        <button class="navbtn navbtn--cart" id="cartBtn" aria-label="Open cart">
+          Cart<span class="navbtn__count" id="cartCount">0</span>
+        </button>
+      </div>
     </div>
   </header>
+
+  <!-- Navigation overlay (opened by Menu) -->
+  <div class="navmenu" id="navmenu" aria-hidden="true">
+    <div class="navmenu__overlay" id="navmenuOverlay"></div>
+    <nav class="navmenu__panel" aria-label="Main menu">
+      <button class="navmenu__close" id="navmenuClose" aria-label="Close menu">✕</button>
+      <a href="#menu">Menu</a>
+      <a href="#offers">Offers</a>
+      <a href="#story">Our Story</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 
   <main id="top">
     <!-- Hero -->
@@ -48,7 +48,7 @@
       <div class="hero__blob hero__blob--2"></div>
       <div class="hero__inner">
         <div class="hero__copy">
-          <span class="pill pill--pop">🌈 5,000+ happy regulars</span>
+          <span class="pill pill--pop">🌈 100+ happy regulars</span>
           <h1 class="hero__title">THE TREAT THAT<br /><span class="hl hl--pink">CHANGES</span> THE GAME</h1>
           <p class="hero__sub">Small-batch savoury bites, gooey sweet things and gifting bakes — made fresh every single morning at <strong>Two&nbsp;Spoons</strong>. Grab a spoon. Actually, grab two.</p>
           <div class="hero__cta">
@@ -150,7 +150,7 @@
     <section class="reviews" id="reviews">
       <div class="section-head">
         <span class="kicker kicker--pink">Word of mouth</span>
-        <h2 class="section-title">Join the <span class="hl hl--yellow">5,000+</span> regulars</h2>
+        <h2 class="section-title">Join the <span class="hl hl--yellow">100+</span> regulars</h2>
       </div>
       <div class="reviews__marquee">
         <div class="reviews__track" id="reviewsTrack"></div>
