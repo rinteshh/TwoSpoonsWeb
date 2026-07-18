@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Two Spoons — Fresh-Baked Snacks, Bakes & Sweet Things</title>
+  <meta name="description" content="Two Spoons bakery — small-batch savoury bites, gooey sweet treats and gifting bakes. Baked fresh daily. Order now for offers on 500+, 600+ and 800+." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,600;125,700;125,800;125,900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥄</text></svg>" />
+</head>
+<body>
+  <!-- Announcement marquee -->
+  <div class="announce">
+    <div class="announce__track" id="announceTrack" aria-hidden="true"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <button class="nav__burger" id="burger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="#top" class="brand" aria-label="Two Spoons home">
+        <span class="brand__spoons">🥄🥄</span>
+        <span class="brand__name">Two&nbsp;Spoons</span>
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#menu">Menu</a>
+        <a href="#offers">Offers</a>
+        <a href="#story">Our Story</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+        <span class="cart-btn__icon">🛒</span>
+        <span class="cart-btn__count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__blob hero__blob--1"></div>
+      <div class="hero__blob hero__blob--2"></div>
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <span class="pill pill--pop">🌈 5,000+ happy regulars</span>
+          <h1 class="hero__title">THE TREAT THAT<br /><span class="hl hl--pink">CHANGES</span> THE GAME</h1>
+          <p class="hero__sub">Small-batch savoury bites, gooey sweet things and gifting bakes — made fresh every single morning at <strong>Two&nbsp;Spoons</strong>. Grab a spoon. Actually, grab two.</p>
+          <div class="hero__cta">
+            <a href="#menu" class="btn btn--primary">Shop the menu</a>
+            <a href="#offers" class="btn btn--ghost">See today's offers</a>
+          </div>
+          <div class="hero__stats">
+            <div><b>36+</b><span>fresh items</span></div>
+            <div><b>100%</b><span>baked daily</span></div>
+            <div><b>3</b><span>ways to save</span></div>
+          </div>
+        </div>
+        <div class="hero__media">
+          <img src="images/hero.jpg" alt="A colourful tray of fresh Two Spoons pastries" />
+          <span class="sticker sticker--tl">fresh<br>daily</span>
+          <span class="sticker sticker--br">yum ✦</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scrolling strip -->
+    <div class="strip" aria-hidden="true">
+      <div class="strip__track" id="stripTrack"></div>
+    </div>
+
+    <!-- Specials -->
+    <section class="specials" id="specials">
+      <div class="section-head">
+        <span class="kicker kicker--purple">This week</span>
+        <h2 class="section-title">Chef's <span class="hl hl--yellow">specials</span></h2>
+        <p class="section-desc">Fresh off the pass and only around for a little while. Ask for them in store.</p>
+      </div>
+      <div class="specials__grid" id="specialsGrid"></div>
+    </section>
+
+    <!-- Offers -->
+    <section class="offers" id="offers">
+      <div class="section-head">
+        <span class="kicker kicker--pink">Sweet deals</span>
+        <h2 class="section-title">Stack up the <span class="hl hl--teal">savings</span></h2>
+        <p class="section-desc">The more you spoon, the more you save. Offers apply automatically at checkout.</p>
+      </div>
+      <div class="offers__grid">
+        <article class="offer offer--yellow">
+          <span class="offer__badge">5% OFF</span>
+          <h3>Orders ₹500 &amp; above</h3>
+          <p>A little thank-you on every basket that crosses five hundred.</p>
+        </article>
+        <article class="offer offer--teal">
+          <span class="offer__badge">FREE ☕</span>
+          <h3>Orders ₹600 &amp; above</h3>
+          <p>Enjoy a <strong>free hazelnut cappuccino</strong> on us — warm, nutty, perfect.</p>
+        </article>
+        <article class="offer offer--pink">
+          <span class="offer__badge">10% OFF</span>
+          <h3>Orders ₹800 &amp; above</h3>
+          <p>Going big? Go on then. Ten percent off the whole lot.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Menu -->
+    <section class="menu" id="menu">
+      <div class="section-head">
+        <span class="kicker kicker--orange">The good stuff</span>
+        <h2 class="section-title">Our <span class="hl hl--pink">menu</span></h2>
+        <p class="section-desc">Tap a category, add to your bag, watch the offers kick in.</p>
+      </div>
+      <div class="menu__tabs" id="menuTabs" role="tablist"></div>
+      <div class="menu__grid" id="menuGrid"></div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+      <div class="features__grid">
+        <div class="feature"><span class="feature__emoji">🔥</span><h4>Baked fresh daily</h4><p>Everything leaves the oven the same morning it reaches you.</p></div>
+        <div class="feature"><span class="feature__emoji">🥣</span><h4>Small batch</h4><p>Made in tiny lots so quality never takes a day off.</p></div>
+        <div class="feature"><span class="feature__emoji">💖</span><h4>Made with love</h4><p>Real butter, real chocolate, zero shortcuts.</p></div>
+        <div class="feature"><span class="feature__emoji">🎁</span><h4>Great for gifting</h4><p>Cookie boxes, laddus &amp; custom cakes for every occasion.</p></div>
+      </div>
+    </section>
+
+    <!-- Story -->
+    <section class="story" id="story">
+      <div class="story__media">
+        <img src="images/story.jpg" alt="A Two Spoons baker working fresh dough" />
+        <span class="sticker sticker--tr">since<br>day one</span>
+      </div>
+      <div class="story__copy">
+        <span class="kicker kicker--purple">Our story</span>
+        <h2 class="section-title">Two spoons,<br />one very <span class="hl hl--orange">happy</span> kitchen</h2>
+        <p>Two Spoons started the way all good things do — with two people, two spoons, and a shared refusal to settle for boring snacks. What began as weekend baking for friends is now a little kitchen turning out Korean cheese buns, gooey brownies and gifting bakes that people drive across town for.</p>
+        <p>We keep the batches small, the ingredients honest and the flavours a bit bold. Whether you're grabbing peri-peri fries after work or ordering a custom cake for a birthday — there's always a spoon (okay, two) with your name on it.</p>
+        <a href="#menu" class="btn btn--primary">Taste the menu</a>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews" id="reviews">
+      <div class="section-head">
+        <span class="kicker kicker--pink">Word of mouth</span>
+        <h2 class="section-title">Join the <span class="hl hl--yellow">5,000+</span> regulars</h2>
+      </div>
+      <div class="reviews__marquee">
+        <div class="reviews__track" id="reviewsTrack"></div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="news" id="contact">
+      <div class="news__inner">
+        <h2 class="news__title">TINY KITCHEN.<br />BIG INBOX ENERGY.<br /><span class="hl hl--teal">GET 15% OFF</span> YOUR FIRST ORDER.</h2>
+        <form class="news__form" id="newsForm">
+          <input type="email" id="newsEmail" placeholder="you@email.com" required aria-label="Email address" />
+          <button type="submit" class="btn btn--dark">Sign me up</button>
+        </form>
+        <p class="news__msg" id="newsMsg" role="status"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="brand__name brand__name--big">Two&nbsp;Spoons</span>
+        <p>Fresh-baked savoury bites, sweet things &amp; gifting bakes. Grab a spoon.</p>
+        <p class="footer__mail">whatspoppin@twospoons.example</p>
+      </div>
+      <div class="footer__cols">
+        <div><h5>Shop</h5><a href="#menu">Savoury Bites</a><a href="#menu">Sweet Tooth</a><a href="#menu">Cookies &amp; Gifting</a></div>
+        <div><h5>About</h5><a href="#story">Our Story</a><a href="#offers">Offers</a><a href="#reviews">Reviews</a></div>
+        <div><h5>Say hi</h5><a href="#contact">Contact</a><a href="#">Instagram</a><a href="#">Wholesale</a></div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span id="year"></span> Two Spoons Bakery. Made with 🧈 &amp; 🍫.</span>
+      <span>Privacy · Terms</span>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__overlay" id="drawerOverlay"></div>
+    <aside class="drawer__panel" role="dialog" aria-label="Your bag">
+      <div class="drawer__head">
+        <h3>Your bag 🥄</h3>
+        <button class="drawer__close" id="drawerClose" aria-label="Close cart">✕</button>
+      </div>
+      <div class="drawer__items" id="drawerItems"></div>
+      <div class="drawer__perks" id="drawerPerks"></div>
+      <div class="drawer__foot">
+        <div class="drawer__row"><span>Subtotal</span><span id="sumSubtotal">₹0</span></div>
+        <div class="drawer__row drawer__row--save" id="rowDiscount" hidden><span id="discLabel">Discount</span><span id="sumDiscount">−₹0</span></div>
+        <div class="drawer__row drawer__row--total"><span>Total</span><span id="sumTotal">₹0</span></div>
+        <button class="btn btn--primary btn--block" id="checkoutBtn">Checkout</button>
+        <p class="drawer__note">Offers apply automatically. This is a demo checkout.</p>
+      </div>
+    </aside>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
