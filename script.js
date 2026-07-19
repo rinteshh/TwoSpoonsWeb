@@ -257,12 +257,12 @@ document.getElementById("checkoutBtn").addEventListener("click", () => {
   showToast("Thanks! This is a demo — no real order placed 💛");
 });
 
-/* ---------- Nav overlay (Menu button) ---------- */
+/* ---------- Nav overlay (opened by the hamburger) ---------- */
 const navmenu = document.getElementById("navmenu");
-const menuBtn = document.getElementById("menuBtn");
-function openMenu() { navmenu.classList.add("is-open"); navmenu.setAttribute("aria-hidden", "false"); menuBtn.setAttribute("aria-expanded", "true"); }
-function closeMenu() { navmenu.classList.remove("is-open"); navmenu.setAttribute("aria-hidden", "true"); menuBtn.setAttribute("aria-expanded", "false"); }
-menuBtn.addEventListener("click", openMenu);
+const burgerBtn = document.getElementById("burgerBtn");
+function openMenu() { navmenu.classList.add("is-open"); navmenu.setAttribute("aria-hidden", "false"); burgerBtn.setAttribute("aria-expanded", "true"); }
+function closeMenu() { navmenu.classList.remove("is-open"); navmenu.setAttribute("aria-hidden", "true"); burgerBtn.setAttribute("aria-expanded", "false"); }
+burgerBtn.addEventListener("click", openMenu);
 document.getElementById("navmenuClose").addEventListener("click", closeMenu);
 document.getElementById("navmenuOverlay").addEventListener("click", closeMenu);
 navmenu.addEventListener("click", (e) => { if (e.target.tagName === "A") closeMenu(); });
