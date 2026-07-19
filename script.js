@@ -286,6 +286,7 @@ onScroll();
 
 /* ---------- Init ---------- */
 document.getElementById("year").textContent = new Date().getFullYear();
+fillMarquee("announceTrack", OFFER_STRINGS, "•");
 fillMarquee("stripTrack", STRIP_WORDS, "✦");
 renderSpecials();
 renderTabs();
