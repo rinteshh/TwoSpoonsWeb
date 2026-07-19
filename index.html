@@ -15,12 +15,15 @@
   <!-- Fixed cloud header -->
   <header class="sitehead" id="sitehead">
     <div class="sitehead__inner">
+      <button class="navbtn navbtn--burger" id="burgerBtn" aria-label="Open navigation menu" aria-haspopup="true" aria-expanded="false">
+        <span class="burger-ico"><span></span><span></span><span></span></span>
+      </button>
       <a href="#top" class="brand" aria-label="Two Spoons Bakery home">
         <img class="brand__logo" src="images/logo.png" alt="Two Spoons Bakery logo" />
         <span class="brand__name">Two&nbsp;Spoons</span>
       </a>
       <div class="sitehead__actions">
-        <button class="navbtn navbtn--menu" id="menuBtn" aria-haspopup="true" aria-expanded="false">Menu</button>
+        <a class="navbtn navbtn--menu" href="#menu">Menu</a>
         <button class="navbtn navbtn--cart" id="cartBtn" aria-label="Open cart">
           Cart<span class="navbtn__count" id="cartCount">0</span>
         </button>
