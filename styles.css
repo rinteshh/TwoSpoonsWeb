@@ -24,7 +24,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 90px; overflow-x: hidden; }
+html { scroll-behavior: smooth; scroll-padding-top: 124px; overflow-x: hidden; }
 
 body {
   font-family: "Space Grotesk", system-ui, sans-serif;
@@ -115,13 +115,39 @@ h1, h2, h3, h4, h5, .display {
 .kicker--orange { background: var(--orange); color: #fff; }
 
 /* ---------- Fixed cloud header ---------- */
-:root { --sky: #8ccaec; --maroon: #4a0f1f; --scallop: 26px; --head-h: 94px; }
+:root { --sky: #8ccaec; --maroon: #4a0f1f; --scallop: 26px; --head-h: 94px; --announce-h: 42px; }
 
-body { padding-top: var(--head-h); }
+body { padding-top: calc(var(--announce-h) + var(--head-h)); }
+
+/* Running announcement / offers bar (fixed above the nav) */
+.announce {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 93;
+  height: var(--announce-h);
+  background: var(--purple);
+  color: #fff;
+  border-bottom: var(--border);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.announce__track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: scroll-x 28s linear infinite;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: .82rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.announce__track span { display: inline-flex; align-items: center; }
+.announce:hover .announce__track { animation-play-state: paused; }
 
 .sitehead {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: var(--announce-h); left: 0; right: 0;
   z-index: 90;
   height: var(--head-h);
   background: var(--sky);
@@ -495,7 +521,8 @@ section { padding: 4.5rem 1.25rem; }
   .footer__top { grid-template-columns: 1fr; }
 }
 @media (max-width: 760px) {
-  :root { --head-h: 82px; --scallop: 18px; }
+  :root { --head-h: 82px; --scallop: 18px; --announce-h: 34px; }
+  .announce__track { font-size: .72rem; letter-spacing: .04em; animation-duration: 20s; }
   .sitehead.is-scrolled { height: 66px; }
   .sitehead__inner { padding: 0 12px; }
   .sitehead__actions { gap: .45rem; }
