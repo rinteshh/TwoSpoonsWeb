@@ -84,7 +84,9 @@ let activeCat = "all";
 function renderSpecials() {
   document.getElementById("specialsGrid").innerHTML = SPECIALS.map((s) => `
     <article class="special">
-      <img src="${s.img}" alt="${s.name}" loading="lazy" />
+      <div class="special__media">
+        <img src="${s.img}" alt="${s.name}" loading="lazy" />
+      </div>
       <div class="special__body">
         <span class="special__tag">${s.tag}</span>
         <h3>${s.name}</h3>
